@@ -1,0 +1,11 @@
+* {
+    padding: 0px;
+    margin: 0px auto;
+}
+
+#wrapper {
+    background-color: salmon;
+    color: wheat;
+    text-align: center;
+    width: 600px;
+}

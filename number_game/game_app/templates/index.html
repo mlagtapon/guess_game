@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+	<link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+    <h1>Welcome to the Great Number Game</h1><br>
+    <h3>I am thinking of a number between 1 and 100</h3><br>
+    <h3>Take a guess!</h3><br>
+    <div id="message">
+    {{ request.session.message }}
+    </div>
+    <h4>Guess:</h4><br>
+    <form action="/process_guess" method="POST">
+        {% csrf_token %}
+        <input type="number" id="num" name="guess"><br><br>
+        <input type="submit" id="done" value="Submit">
+    </form>
+    <a href="/clear"><button> Restart </button></a>
+    </div>
+</body>
+</html>
